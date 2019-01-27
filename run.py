@@ -1,7 +1,14 @@
 #!/usr/bin/env python3.6
-from user import User
+from user import User, Credential
 
 def create_user(fname,email):
+    '''
+    Function to create a new user
+    '''
+    new_user = User(fname,email)
+    return new_user
+
+def create_credential(fname,email):
     '''
     Function to create a new user
     '''
