@@ -17,7 +17,7 @@ class User:
         '''
 
         User.user_list.append(self)
-        s
+        
     def delete_user(self):
 
         '''

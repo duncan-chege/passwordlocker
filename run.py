@@ -28,55 +28,57 @@ def display_users():
 
 def main():
     print("Welcome to your user list. What is your name?")
-            user_name = input()
+    user_name = input()
 
-            print(f"Hello {user_name}. what would you like to do?")
-            print('\n')
+    print(f"Hello {user_name}. what would you like to do?")
+    print('\n')
 
-            while True:
-                    print("Use these short codes : cc - create a new user, dc - display users, ex -exit the user list, del- delete user ")
+    while True:
+            print("Use these short codes : cc - create a new user, dc - display users, ex -exit the user list, del- delete user ")
 
-                    short_code = input().lower()
+            short_code = input().lower()
 
-                    if short_code == 'cc':
-                            print("New User")
-                            print("-"*10)
+            if short_code == 'cc':
+                    print("New User")
+                    print("-"*10)
 
-                            print ("First name -")
-                            f_name = input()
+                    print ("First name -")
+                    f_name = input()
 
-                            print("Email address - ")
-                            e_address = input()
+                    print("Email address - ")
+                    e_address = input()
 
-                            save_users(create_user(f_name,e_address)) # create and save new user.
-                            print ('\n')
-                            print(f"New User {f_name} created")
-                            print ('\n')
+                    save_users(create_user(f_name,e_address)) # create and save new user.
+                    print ('\n')
+                    print(f"New User {f_name} created")
+                    print ('\n')
 
-                    elif short_code == 'dc':
+            elif short_code == 'dc':
 
-                            if display_users():
-                                    print("Here is a list of all your users")
-                                    print('\n')
+                    if display_users():
+                            print("Here is a list of all your users")
+                            print('\n')
 
-                                    for user in display_users():
-                                            print(f"{user.myfirstname}")
+                            for user in display_users():
+                                    print(f"{user.myfirstname}")
 
-                                    print('\n')
-                            else:
-                                    print('\n')
-                                    print("You dont seem to have any users saved yet")
-                                    print('\n')
-
-                    # elif short_code == 'del':
-
-
-
-                    elif short_code == "ex":
-                            print("Bye .......")
-                            break
+                            print('\n')
                     else:
-                            print("I really didn't get that. Please use the short codes")
+                            print('\n')
+                            print("You dont seem to have any users saved yet")
+                            print('\n')
+
+            # elif short_code == 'del':
+
+
+
+            elif short_code == "ex":
+                    print("Until next time")
+                    break
+            else:
+                    print("I really didn't get that. Please use the short codes")
+
+
 
 if __name__ == '__main__':
 
