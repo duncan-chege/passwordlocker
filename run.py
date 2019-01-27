@@ -13,3 +13,15 @@ def save_users(user):
     Function to save user
     '''
     contact.save_user()
+
+def del_user(user):
+    '''
+    Function to delete a user
+    '''
+    contact.delete_user()
+
+def display_users():
+    '''
+    Function that returns all the saved users
+    '''
+    return User.display_users()
