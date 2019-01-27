@@ -14,7 +14,7 @@ def save_users(user):
     '''
     user.save_user()
 
-def del_user(user):
+def del_users(user):
     '''
     Function to delete a user
     '''
@@ -28,13 +28,13 @@ def display_users():
 
 def main():
     print("Welcome to your user list. What is your name?")
-            first_name = input()
+            user_name = input()
 
-            print(f"Hello {first_name}. what would you like to do?")
+            print(f"Hello {user_name}. what would you like to do?")
             print('\n')
 
             while True:
-                    print("Use these short codes : cc - create a new user, dc - display users, ex -exit the user list ")
+                    print("Use these short codes : cc - create a new user, dc - display users, ex -exit the user list, del- delete user ")
 
                     short_code = input().lower()
 
@@ -42,10 +42,10 @@ def main():
                             print("New User")
                             print("-"*10)
 
-                            print ("First name ....")
+                            print ("First name -")
                             f_name = input()
 
-                            print("Email address ...")
+                            print("Email address - ")
                             e_address = input()
 
                             save_users(create_user(f_name,e_address)) # create and save new user.
@@ -60,7 +60,7 @@ def main():
                                     print('\n')
 
                                     for user in display_users():
-                                            print(f"{user.first_name}")
+                                            print(f"{user.myfirstname}")
 
                                     print('\n')
                             else:
@@ -68,8 +68,16 @@ def main():
                                     print("You dont seem to have any users saved yet")
                                     print('\n')
 
+                    # elif short_code == 'del':
+
+
+
                     elif short_code == "ex":
                             print("Bye .......")
                             break
                     else:
                             print("I really didn't get that. Please use the short codes")
+
+if __name__ == '__main__':
+
+    main()
