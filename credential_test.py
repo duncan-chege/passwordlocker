@@ -32,6 +32,21 @@ class TestCredential(unittest.TestCase):
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credential.credential_list),1)
 
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Credential.credential_list = []
+
+    def test_save_multiple_credential(self):
+        '''
+        test to check if we can check multiple objects within credenials list
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("batman","0987") # new credential
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list),2)
+
 
 if __name__ == '__main__':
     unittest.main()
