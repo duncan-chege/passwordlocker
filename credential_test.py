@@ -69,7 +69,7 @@ class TestCredential(unittest.TestCase):
 
         found_credential = Credential.find_by_username("batman")
 
-        self.assertEqual(found_credential.password,test_credential.password)
+        self.assertEqual(found_credential.mypassword,test_credential.mypassword)
 
 
 if __name__ == '__main__':
