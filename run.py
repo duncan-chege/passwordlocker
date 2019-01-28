@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 from user import User
 from credential import Credential
-import
+import getpass
 
 def create_user(fname,email):
     '''
@@ -78,9 +78,7 @@ def main():
 
                     print ("User name -")
                     u_name = input()
-                    print("Password - ")
-                    p_word = input()
-
+                    p_word = getpass.getpass()
 
                     save_users(create_user(f_name,e_address)) # create and save new user.
                     save_credentials(create_credential(u_name,p_word)) # create and save new user.
