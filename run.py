@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 from user import User
 from credential import Credential
+import
 
 def create_user(fname,email):
     '''
@@ -42,29 +43,27 @@ def check_existing_credentials(username):
     '''
     return Credential.credential_exist(username)
 
-def display_users():
-    '''
-    Function that returns all the saved users
-    '''
-    return User.display_users()
+# def display_users():
+#     '''
+#     Function that returns all the saved users
+#     '''
+#     return User.display_users()
 
 def display_credentials():
     '''
     Function that returns all the saved credentials
     '''
-    return Credentials.display_credentials()
+    return Credential.display_credentials()
 
 def main():
     print("Welcome to your user list. What is your name?")
     kwanza_name = input()
-    print("And username?")
-    kwanza_uname = input()
 
-    print(f"Hello {kwanza_uname}. what would you like to do?")
+    print(f"Hello {kwanza_name}. what would you like to do?")
     print('\n')
 
     while True:
-            print("Use these short codes : cc - create a new user, dc - display users, ex -exit the user list, del- delete user ")
+            print("Use these short codes : cc - create new credentials, dc - display credenials, ex -exit the user list, del- delete user credenials")
 
             short_code = input().lower()
 
@@ -87,17 +86,17 @@ def main():
                     save_credentials(create_credential(u_name,p_word)) # create and save new user.
 
                     print ('\n')
-                    print(f"New User {f_name}, alias {u_name} created")
+                    print(f"New User {f_name}, alias '{u_name}' created")
                     print ('\n')
 
             elif short_code == 'dc':
 
-                    if display_users():
+                    if display_credentials():
                             print("Here is a list of all your users")
                             print('\n')
 
-                            for user in display_users():
-                                    print(f"{u_name}")
+                            for credential in display_credentials():
+                                    print(f"{credential.myusername}")
 
                             print('\n')
                     else:
@@ -106,7 +105,7 @@ def main():
                             print('\n')
 
             elif short_code == 'del':
-                print("Enter username so those credentials can be deleted")
+                print("Enter username so that account can be deleted")
                 search_username=input()
                 if check_existing_credentials(search_username):
                     search_credential=find_credential(search_username)
@@ -114,7 +113,6 @@ def main():
                     print(f"{u_name} gone")
                 else:
                     print("That username is inexistent")
-
 
 
             elif short_code == "ex":
