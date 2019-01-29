@@ -18,7 +18,7 @@ Written by *Duncan Chege*. My first attempt at using python
 ## Behaviour Driven Development
 
 Below shows an image identifying different function executions
-![Image](final.jpg)
+![Image](new.jpg)
 
 
 ### Contact Information
