@@ -74,6 +74,8 @@ def generate_password():
 def main():
     print("Welcome to your account manager app. What is your name?")
     kwanza_name = input()
+    print("What about your username?")
+    kwanza_uname = input()
 
     print(f"Hello {kwanza_name}. what would you like to do?")
     print('\n')
