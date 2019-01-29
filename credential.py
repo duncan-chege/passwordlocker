@@ -1,3 +1,5 @@
+import random
+
 class Credential:
 
     '''
@@ -5,7 +7,8 @@ class Credential:
     '''
     credential_list=[]
 
-    def __init__(self,username,password):
+    def __init__(self,accname,username,password):
+        self.myaccname=accname
         self.myusername=username
         self.mypassword=password
 
@@ -14,7 +17,7 @@ class Credential:
         save_credential method saves credential objects into credential_list
         '''
 
-        Credential.credential_list.append(self)
+        Credential.credential_list.append(self)  #appends every new value in the credential list
 
     def delete_credential(self):
         '''
@@ -22,6 +25,13 @@ class Credential:
         '''
 
         Credential.credential_list.remove(self)
+
+    def generate_password():
+       chars = "abcdefghijklmnopqrstuvwxyz/;'[]=)(*$@)"
+       password = ""
+       for i in range(10):
+           password+=random.choice(chars)
+       return password          #computated functions give a return value
 
     @classmethod
     def find_by_username(cls,personusername):
