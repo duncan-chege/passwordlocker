@@ -7,8 +7,8 @@ class Credential:
     '''
     credential_list=[]
 
-    def __init__(self,accname,username,password):
-        self.myaccname=accname
+    def __init__(self,accountname,username,password):
+        self.myaccountname=accountname
         self.myusername=username
         self.mypassword=password
 
@@ -31,16 +31,16 @@ class Credential:
        password = ""
        for i in range(10):
            password+=random.choice(chars)
-       return password          #computated functions give a return value
+       return password          #computated functions give a return value    
 
     @classmethod
-    def find_by_username(cls,personusername):
+    def find_by_username(cls,personuname):
         '''
         Method that takes in a username and returns a credential that matches that username.
         '''
 
         for credential in cls.credential_list:
-            if credential.myusername == personusername:
+            if credential.myusername == personuname:
                 return credential
 
     @classmethod

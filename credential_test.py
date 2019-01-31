@@ -13,7 +13,7 @@ class TestCredential(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credential("twitter","superman","1234")) # create credential object
+        self.new_credential = Credential("twitter", "batman", "drknight")) # create credential object
 
 
     def test_init(self):
@@ -21,9 +21,9 @@ class TestCredential(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credential.myaccname,"twitter")
-        self.assertEqual(self.new_credential.myusername,"superman")
-        self.assertEqual(self.new_credential.mypassword,"1234")
+        self.assertEqual(self.new_credential.myfirstname,"twitter")
+        self.assertEqual(self.new_credential.mygender,",batman")
+        self.assertEqual(self.new_credential.mycounty,"drknight")
 
     def test_save_credential(self):
         '''
@@ -44,7 +44,7 @@ class TestCredential(unittest.TestCase):
         test to check if we can check multiple objects within credenials list
         '''
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","0987") # new credential
+        test_credential = Credential("twitter","batman","drknight") # new credential
         test_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),2)
 
@@ -53,7 +53,7 @@ class TestCredential(unittest.TestCase):
         test to remove a credential from our credential list
         '''
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","0987") # new credential
+        test_credential = Credential("twitter","batman","drknight") # new credential
         test_credential.save_credential()
 
         self.new_credential.delete_credential()# Deleting a credential object
@@ -65,7 +65,7 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","0987") # new credential
+        test_credential = Credential("twitter","batman","drknight") # new credential
         test_credential.save_credential()
 
         found_credential = Credential.find_by_username("batman")
@@ -78,7 +78,7 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","0987") # new credential
+        test_credential = Credential("twitter","batman","drknight") # new credential
         test_credential.save_credential()
 
         credential_exists = Credential.credential_exist("batman")
